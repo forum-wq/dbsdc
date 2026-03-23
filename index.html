@@ -1,0 +1,2300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBS Development & Consulting – Stakeholder Alignment & Delivery</title>
+    <meta name="description" content="DBS Development & Consulting – M&A, corporate restructuring, real estate transactions, and interim leadership across Central & Eastern Europe. €500M+ in transactions. Founded by Dávid Bořuta.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="DBS Development & Consulting – Complex Projects Delivered">
+    <meta property="og:description" content="M&A, corporate restructuring, real estate transactions, and interim executive leadership for developers, municipalities, and investors across CEE. €500M+ track record.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.dbsdc.com">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <style>
+        :root {
+            /* DBS Brand Colors - From PF 2026 Card */
+            --dark-navy: #0D1B2A;
+            --dark-navy-light: #1B2838;
+            --teal: #5AAFA0;
+            --teal-dim: rgba(90, 175, 160, 0.15);
+            --coral: #E8A87C;
+            --coral-dim: rgba(232, 168, 124, 0.12);
+            
+            /* Legacy mappings for compatibility */
+            --deep-blue: #0D1B2A;
+            --deep-blue-dark: #071320;
+            --deep-blue-hover: #1B2838;
+            --forest-green: #5AAFA0;
+            --forest-green-dim: rgba(90, 175, 160, 0.15);
+            --gold-bronze: #E8A87C;
+            --gold-dim: rgba(232, 168, 124, 0.12);
+            
+            /* Text colors - WHITE based */
+            --text-primary: #FFFFFF;
+            --text-secondary: rgba(255, 255, 255, 0.85);
+            --text-muted: rgba(255, 255, 255, 0.6);
+            
+            /* UI colors */
+            --border: rgba(255, 255, 255, 0.12);
+            --card-bg: rgba(27, 40, 56, 0.6);
+            --section-spacing: 120px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--dark-navy);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(90, 175, 160, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(90, 175, 160, 0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            top: -50%;
+            right: -30%;
+            width: 80%;
+            height: 100%;
+            background: radial-gradient(ellipse, rgba(90, 175, 160, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ==================== STICKY HEADER ==================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 16px 0;
+            background: rgba(0, 62, 126, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 12px 0;
+            background: rgba(0, 45, 92, 0.98);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .logo-img {
+            height: 44px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover .logo-img {
+            transform: scale(1.02);
+        }
+
+        .logo-text {
+            font-family: 'Instrument Serif', serif;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: -0.3px;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 900px) {
+            .logo-text {
+                display: none;
+            }
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--forest-green);
+        }
+
+        .header-cta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: #FFFFFF;
+            border: none;
+            color: var(--deep-blue);
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            min-height: 44px;
+            min-width: 44px;
+        }
+
+        .header-cta:hover {
+            background: var(--forest-green);
+            color: #FFFFFF;
+            transform: translateY(-1px);
+        }
+
+        /* Mobile menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            padding: 160px 0 100px;
+            text-align: center;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero .container {
+            width: 100%;
+        }
+
+        .hero h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(36px, 5vw, 64px);
+            font-weight: 400;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .hero h1 em {
+            color: var(--forest-green);
+            font-style: italic;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+            animation: fadeInUp 0.6s ease 0.1s backwards;
+        }
+
+        .hero-cta-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            animation: fadeInUp 0.6s ease 0.2s backwards;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            background: #FFFFFF;
+            border: none;
+            color: var(--deep-blue);
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            min-height: 48px;
+        }
+
+        .hero-cta:hover {
+            background: var(--forest-green);
+            color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+
+        .hero-cta-note {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ==================== TRUST BAR ==================== */
+        .trust-bar {
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .trust-label {
+            text-align: center;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+
+        .trust-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .trust-logo {
+            color: var(--text-muted);
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .trust-logo:hover {
+            opacity: 1;
+            color: var(--text-secondary);
+        }
+
+        /* ==================== PROBLEM STATEMENT ==================== */
+        .problem {
+            padding: var(--section-spacing) 0;
+            text-align: center;
+        }
+
+        .problem h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 400;
+            line-height: 1.3;
+            max-width: 800px;
+            margin: 0 auto 24px;
+        }
+
+        .problem p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ==================== SECTION HEADERS ==================== */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--gold-bronze);
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 400;
+        }
+
+        .section-intro {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 24px auto 0;
+            line-height: 1.7;
+        }
+
+        /* ==================== SERVICES SECTION ==================== */
+        .services {
+            padding: var(--section-spacing) 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: rgba(80, 95, 69, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--forest-green-dim);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .service-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--forest-green);
+        }
+
+        .service-card h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .service-outcome {
+            font-size: 14px;
+            color: var(--forest-green);
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-bottom: 16px;
+        }
+
+        .service-card li {
+            font-size: 14px;
+            color: var(--text-secondary);
+            padding-left: 16px;
+            position: relative;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .service-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--forest-green);
+            opacity: 0.6;
+        }
+
+        .service-example {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-style: italic;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .services-cta {
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        /* ==================== PROCESS SECTION ==================== */
+        .process {
+            padding: var(--section-spacing) 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .process-timeline {
+            display: grid;
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .step-number {
+            font-family: 'Instrument Serif', serif;
+            font-size: 48px;
+            color: var(--gold-bronze);
+            line-height: 1;
+            opacity: 0.9;
+        }
+
+        .step-content h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 12px;
+        }
+
+        .step-content p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ==================== RESULTS/CASE STUDIES ==================== */
+        .results {
+            padding: var(--section-spacing) 0;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Hero case study */
+        .hero-case {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 48px;
+            margin-bottom: 48px;
+        }
+
+        .hero-case-badge {
+            display: inline-block;
+            background: var(--gold-dim);
+            color: var(--gold-bronze);
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 6px 12px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .hero-case h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 32px;
+            font-weight: 400;
+            margin-bottom: 24px;
+        }
+
+        .hero-case-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .case-challenge h4,
+        .case-approach h4,
+        .case-results h4 {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--forest-green);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .case-challenge p,
+        .case-solution p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .case-approach ul,
+        .case-results ul {
+            list-style: none;
+        }
+
+        .case-approach li,
+        .case-results li {
+            font-size: 15px;
+            color: var(--text-secondary);
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .case-approach li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--forest-green);
+            opacity: 0.6;
+        }
+
+        .case-results li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--forest-green);
+        }
+
+        .hero-case-stats {
+            display: flex;
+            gap: 48px;
+            margin-top: 32px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: 'Instrument Serif', serif;
+            font-size: 36px;
+            color: #FFFFFF;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Case studies grid */
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+        }
+
+        .case-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            transition: all 0.3s ease;
+        }
+
+        .case-card:hover {
+            border-color: rgba(80, 95, 69, 0.3);
+        }
+
+        .case-card h4 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 12px;
+        }
+
+        .case-card .challenge {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .case-card .results-list {
+            list-style: none;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .case-card .results-list li {
+            font-size: 13px;
+            color: var(--text-muted);
+            padding-left: 16px;
+            position: relative;
+            margin-bottom: 6px;
+        }
+
+        .case-card .results-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--forest-green);
+        }
+
+        .results-cta {
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        /* ==================== WHY DBS SECTION ==================== */
+        .why-dbs {
+            padding: var(--section-spacing) 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .differentiators {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .differentiator {
+            text-align: center;
+            padding: 40px 32px;
+        }
+
+        .differentiator-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--forest-green-dim);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+        }
+
+        .differentiator-icon svg {
+            width: 28px;
+            height: 28px;
+            color: var(--forest-green);
+        }
+
+        .differentiator h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 16px;
+        }
+
+        .differentiator p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ==================== DATA CENTER RESEARCH SECTION ==================== */
+        .research {
+            padding: var(--section-spacing) 0;
+            border-top: 1px solid var(--border);
+            background: rgba(0, 45, 92, 0.4);
+        }
+
+        .research-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--gold-dim);
+            border: 1px solid rgba(138, 110, 47, 0.3);
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--gold-bronze);
+            margin-bottom: 24px;
+        }
+
+        .research-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--gold-bronze);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .reports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .report-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .report-card:hover {
+            border-color: rgba(80, 95, 69, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .report-badge {
+            display: inline-block;
+            background: var(--gold-dim);
+            color: var(--gold-bronze);
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .report-title {
+            font-family: 'Instrument Serif', serif;
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .report-meta {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .report-highlights {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .report-highlights li {
+            font-size: 14px;
+            color: var(--text-secondary);
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+
+        .report-highlights li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--forest-green);
+            opacity: 0.6;
+        }
+
+        .report-cta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 14px 20px;
+            background: transparent;
+            border: 2px solid #FFFFFF;
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .report-cta:hover {
+            background: #FFFFFF;
+            color: var(--deep-blue);
+        }
+
+        .research-trust {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 48px;
+            flex-wrap: wrap;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .research-trust-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .research-trust-icon {
+            width: 20px;
+            height: 20px;
+            opacity: 0.6;
+        }
+
+        /* ==================== ABOUT SECTION ==================== */
+        .about {
+            padding: var(--section-spacing) 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .about-photo {
+            position: sticky;
+            top: 120px;
+        }
+
+        .about-photo-img {
+            width: 100%;
+            max-width: 300px;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .about-photo-placeholder {
+            width: 100%;
+            aspect-ratio: 1;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .about-info h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 36px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .about-title {
+            font-size: 16px;
+            color: var(--forest-green);
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        .about-intro {
+            font-size: 18px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .career-highlights h3 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .career-item {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .career-item:first-of-type {
+            border-top: 1px solid var(--border);
+        }
+
+        .career-period {
+            font-size: 13px;
+            color: var(--gold-bronze);
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .career-role {
+            font-family: 'Instrument Serif', serif;
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .career-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .education {
+            margin-top: 40px;
+        }
+
+        .education h3 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .education p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        /* ==================== CONTACT SECTION ==================== */
+        .contact {
+            padding: var(--section-spacing) 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .contact-info h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 42px;
+            font-weight: 400;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .contact-info > p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        .contact-methods h4 {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .contact-method svg {
+            width: 20px;
+            height: 20px;
+            color: var(--forest-green);
+            opacity: 0.8;
+        }
+
+        .contact-method a,
+        .contact-method span {
+            color: var(--text-secondary);
+            font-size: 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-method a:hover {
+            color: var(--forest-green);
+        }
+
+        .contact-trust {
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+        }
+
+        .contact-trust p {
+            font-size: 13px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-trust svg {
+            width: 16px;
+            height: 16px;
+            color: var(--forest-green);
+        }
+
+        /* Contact form */
+        .contact-form {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+        }
+
+        .contact-form h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            background: var(--deep-blue-dark);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 15px;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--forest-green);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 16px 28px;
+            background: #FFFFFF;
+            border: none;
+            border-radius: 8px;
+            color: var(--deep-blue);
+            font-size: 16px;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: 48px;
+        }
+
+        .form-submit:hover {
+            background: var(--forest-green);
+            color: #FFFFFF;
+            transform: translateY(-1px);
+        }
+
+        .form-note {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 16px;
+            text-align: center;
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            padding: 60px 0 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-top: 16px;
+        }
+
+        .footer-col h4 {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col a:hover {
+            color: var(--forest-green);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .footer-compliance {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-compliance span {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ==================== MODAL ==================== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 62, 126, 0.95);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--deep-blue-dark);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 48px;
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            animation: modalIn 0.3s ease;
+        }
+
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--text-primary);
+        }
+
+        .modal h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 12px;
+        }
+
+        .modal p {
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            font-size: 15px;
+        }
+
+        .modal-form input {
+            width: 100%;
+            padding: 16px 20px;
+            background: var(--deep-blue);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-size: 15px;
+            font-family: inherit;
+            outline: none;
+            margin-bottom: 12px;
+            transition: border-color 0.3s ease;
+        }
+
+        .modal-form input:focus {
+            border-color: var(--forest-green);
+        }
+
+        .modal-form input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .modal-form button {
+            width: 100%;
+            padding: 16px 28px;
+            background: #FFFFFF;
+            border: none;
+            border-radius: 6px;
+            color: var(--deep-blue);
+            font-size: 15px;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .modal-form button:hover {
+            background: var(--forest-green);
+            color: #FFFFFF;
+        }
+
+        /* Hidden honeypot field */
+        .mc-honeypot {
+            position: absolute;
+            left: -5000px;
+        }
+
+        /* ==================== INLINE CTA BUTTON ==================== */
+        .inline-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            background: transparent;
+            border: 2px solid #FFFFFF;
+            color: #FFFFFF;
+            font-size: 15px;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .inline-cta:hover {
+            background: #FFFFFF;
+            color: var(--deep-blue);
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-photo {
+                position: static;
+                max-width: 300px;
+            }
+
+            .hero-case-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --section-spacing: 80px;
+            }
+
+            header {
+                padding: 12px 0;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 120px 0 60px;
+                min-height: auto;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .services-grid,
+            .cases-grid,
+            .reports-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-step {
+                grid-template-columns: 60px 1fr;
+                gap: 16px;
+            }
+
+            .step-number {
+                font-size: 36px;
+            }
+
+            .hero-case {
+                padding: 28px;
+            }
+
+            .hero-case-stats {
+                flex-wrap: wrap;
+                gap: 24px;
+            }
+
+            .differentiators {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-logos {
+                gap: 24px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .footer-compliance {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .contact-form {
+                padding: 28px;
+            }
+
+            .research-trust {
+                gap: 24px;
+            }
+        }
+
+        /* Focus states for accessibility */
+        a:focus,
+        button:focus,
+        input:focus,
+        textarea:focus {
+            outline: 2px solid var(--forest-green);
+            outline-offset: 2px;
+        }
+
+        /* Skip link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--forest-green);
+            color: var(--deep-blue);
+            padding: 8px 16px;
+            z-index: 9999;
+            transition: top 0.3s ease;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <div class="bg-grid"></div>
+    <div class="bg-gradient"></div>
+
+    <!-- ==================== HEADER ==================== -->
+    <header id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="#" class="logo" aria-label="DBS Development & Consulting - Home">
+                    <img src="vector-logo-DBS-review1.png" alt="DBS Development & Consulting" class="logo-img">
+                    <span class="logo-text">DBS Development & Consulting</span>
+                </a>
+                
+                <nav aria-label="Main navigation">
+                    <a href="#services">Services</a>
+                    <a href="#process">Process</a>
+                    <a href="#results">Results</a>
+                    <a href="#research">Research</a>
+                    <a href="#about">About</a>
+                </nav>
+                
+                <a href="#contact" class="header-cta">
+                    Start the conversation
+                </a>
+
+                <button class="mobile-menu-btn" aria-label="Open menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 12h18M3 6h18M3 18h18"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- ==================== HERO SECTION ==================== -->
+        <section class="hero">
+            <div class="container">
+                <h1>Bridging public planning and private execution—<em>so complex projects actually get built.</em></h1>
+                <p class="hero-subtitle">DBS delivers M&A, corporate restructuring, real estate transactions, and interim leadership for developers, municipalities, and investors across Central & Eastern Europe. €500M+ in transactions. 20+ years of experience.</p>
+                <div class="hero-cta-wrapper">
+                    <a href="#contact" class="hero-cta">Start the conversation</a>
+                    <span class="hero-cta-note">I'll respond within 24 hours.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TRUST BAR ==================== -->
+        <section class="trust-bar" aria-label="Client engagements">
+            <div class="container">
+                <p class="trust-label">Selected Clients & Mandates</p>
+                <div class="trust-logos">
+                    <span class="trust-logo">HB Reavis</span>
+                    <span class="trust-logo">BZ Group</span>
+                    <span class="trust-logo">ColosseoEAS</span>
+                    <span class="trust-logo">PRANGL</span>
+                    <span class="trust-logo">K CERO Invest</span>
+                    <span class="trust-logo">Government of Slovakia</span>
+                    <span class="trust-logo">BKS Bank</span>
+                    <span class="trust-logo">Cornerstone IM</span>
+                    <span class="trust-logo">Braun Holding</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PROBLEM STATEMENT ==================== -->
+        <section class="problem">
+            <div class="container">
+                <h2>When regulation, community interests, and return targets misalign—projects stall.</h2>
+                <p>DBS aligns decision-makers, maps the regulatory path, and puts governance and reporting in place so momentum becomes sustainable and defensible.</p>
+            </div>
+        </section>
+
+        <!-- ==================== SERVICES SECTION ==================== -->
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-label">Services</p>
+                    <h2 class="section-title">Core Expertise</h2>
+                    <p class="section-intro">Real estate development & asset management • Structured & project finance • M&A and restructuring • Interim executive leadership • Public-private partnerships</p>
+                </div>
+
+                <div class="services-grid">
+                    <!-- Service 1 -->
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                        </div>
+                        <h3>Strategy & Feasibility</h3>
+                        <p class="service-outcome">Market/regulatory feasibility, scenarios, and board-ready business cases</p>
+                        <ul>
+                            <li>Market and regulatory feasibility analysis with scenario planning</li>
+                            <li>KPI baselines and risk registers for investment decisions</li>
+                            <li>Board-ready business cases with financial projections</li>
+                            <li>Multi-stakeholder impact assessments</li>
+                        </ul>
+                    </article>
+
+                    <!-- Service 2 -->
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                        </div>
+                        <h3>Regulatory & Compliance Navigation</h3>
+                        <p class="service-outcome">Zoning/land-use assessments and approval pathway mapping</p>
+                        <ul>
+                            <li>Comprehensive zoning and land-use compliance assessments</li>
+                            <li>Regulatory approval pathway mapping with timeline projections</li>
+                            <li>Documentation packages that withstand public-sector and lender scrutiny</li>
+                            <li>Ongoing compliance monitoring and reporting</li>
+                        </ul>
+                        <p class="service-example">Recent applications span mixed-use development approvals (SK), municipal transportation compliance (HU), and PE acquisition due diligence (CZ).</p>
+                    </article>
+
+                    <!-- Service 3 -->
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <h3>Stakeholder & Public Process</h3>
+                        <p class="service-outcome">Structured engagement frameworks that reduce objections and delays</p>
+                        <ul>
+                            <li>Stakeholder mapping with decision-rights analysis</li>
+                            <li>Facilitated engagement sessions with transparent issue tracking</li>
+                            <li>Consensus-building frameworks that balance competing interests</li>
+                            <li>Public process management with documentation trails</li>
+                        </ul>
+                        <p class="service-example">Work ranges from community engagement for large residential developments to cross-border institutional stakeholder alignment.</p>
+                    </article>
+
+                    <!-- Service 4 -->
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3>Financial Structuring & Reporting</h3>
+                        <p class="service-outcome">Capital stack design, lender packs, and investor reporting</p>
+                        <ul>
+                            <li>Capital structure design and scenario modeling</li>
+                            <li>Bank-ready financing packages with covenant frameworks</li>
+                            <li>Investor reporting dashboards with monthly cadence</li>
+                            <li>Portfolio-level KPI tracking and variance analysis</li>
+                        </ul>
+                        <p class="service-example">Structures developed for development financing, acquisition financing, and portfolio management across real estate and infrastructure.</p>
+                    </article>
+
+                    <!-- Service 5 -->
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                        </div>
+                        <h3>Implementation & Interim Leadership</h3>
+                        <p class="service-outcome">Operating model design, vendor orchestration, and delivery governance</p>
+                        <ul>
+                            <li>Operating model design and organizational setup</li>
+                            <li>Interim leadership for transformation initiatives</li>
+                            <li>Vendor selection, contracting, and performance management</li>
+                            <li>Project delivery governance with OKRs and dashboards</li>
+                        </ul>
+                        <p class="service-example">Engagements include post-acquisition integration, country operation establishment, and turnaround management.</p>
+                    </article>
+                </div>
+
+                <div class="services-cta">
+                    <a href="#contact" class="inline-cta">Talk through your project →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PROCESS SECTION ==================== -->
+        <section class="process" id="process">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-label">Process</p>
+                    <h2 class="section-title">How We Work</h2>
+                    <p class="section-intro">A universal framework that serves developers, municipalities, and investors with clarity and predictability.</p>
+                </div>
+
+                <div class="process-timeline">
+                    <div class="process-step">
+                        <span class="step-number">01</span>
+                        <div class="step-content">
+                            <h3>Map Stakeholders & Risks</h3>
+                            <p>Identify all parties with decision rights, interests, or influence—then catalog blockers, dependencies, and risk triggers before they derail momentum.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <span class="step-number">02</span>
+                        <div class="step-content">
+                            <h3>Define Regulatory Pathway</h3>
+                            <p>Chart exact approval sequence, evidence standards, and realistic timelines across zoning, environmental, financial, and public-process requirements.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <span class="step-number">03</span>
+                        <div class="step-content">
+                            <h3>Design Financial Architecture</h3>
+                            <p>Model scenarios, establish KPIs, structure capital stack, and create covenant frameworks that satisfy lenders and investors while maintaining operational flexibility.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <span class="step-number">04</span>
+                        <div class="step-content">
+                            <h3>Engage & Align</h3>
+                            <p>Run facilitated workshops, manage public process, maintain transparent issue logs, and build consensus that reduces objections and accelerates approvals.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <span class="step-number">05</span>
+                        <div class="step-content">
+                            <h3>Implement & Govern</h3>
+                            <p>Establish OKRs, deploy dashboards, maintain reporting cadence, orchestrate vendors, and hand over sustainably to internal teams.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== RESULTS SECTION ==================== -->
+        <section class="results" id="results">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-label">Results</p>
+                    <h2 class="section-title">Track Record</h2>
+                    <p class="section-intro">€500M+ in transactions across residential development, commercial real estate, M&A, corporate restructuring, and public sector advisory across Central & Eastern Europe (2004–2025).</p>
+                </div>
+
+                <!-- Hero Case Study: Koloseo -->
+                <article class="hero-case">
+                    <span class="hero-case-badge">Flagship Project</span>
+                    <h3>Koloseo Bratislava — 711 Units, €80M+</h3>
+                    
+                    <div class="hero-case-grid">
+                        <div class="case-left">
+                            <div class="case-challenge">
+                                <h4>Challenge</h4>
+                                <p>Deliver Slovakia's largest post-revolution residential development on time and budget—conversion of former IKEA building into premium residential complex.</p>
+                            </div>
+                            
+                            <div class="case-approach" style="margin-top: 24px;">
+                                <h4>Role & Approach</h4>
+                                <ul>
+                                    <li>CEO with full P&L responsibility for BZ Group</li>
+                                    <li>Managed acquisition, planning, permitting, construction, sales</li>
+                                    <li>Built cross-functional delivery team with clear decision rights</li>
+                                    <li>Established board reporting and lender coordination frameworks</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="case-right">
+                            <div class="case-results">
+                                <h4>Results</h4>
+                                <ul>
+                                    <li>711 apartments developed, built, and sold in under 3 years</li>
+                                    <li>Delivered on time and on budget</li>
+                                    <li>95%+ sell-through achieved</li>
+                                    <li>~20% IRR for shareholders</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-case-stats">
+                        <div class="stat">
+                            <span class="stat-value">711</span>
+                            <span class="stat-label">Units Delivered</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">€80M+</span>
+                            <span class="stat-label">Project Value</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">95%+</span>
+                            <span class="stat-label">Sell-through</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">~20%</span>
+                            <span class="stat-label">IRR</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Other Case Studies Grid -->
+                <div class="cases-grid">
+                    <!-- Case: HB Reavis -->
+                    <article class="case-card">
+                        <h4>HB Reavis CEE/SEE Portfolio — €150M+ Pipeline</h4>
+                        <p class="challenge">Country CEO for Hungary, Croatia, Serbia (2007–2013). Established fully operational country offices, managed acquisitions, development pipeline, financing, operations, and teams.</p>
+                        <ul class="results-list">
+                            <li>Vaci Corner & Agora acquisitions in Budapest</li>
+                            <li>Zagreb Landmark 25,000m² office tower planning</li>
+                            <li>Achieved city plan amendment through assembly</li>
+                        </ul>
+                    </article>
+
+                    <!-- Case: RSBC Group -->
+                    <article class="case-card">
+                        <h4>RSBC Group / Schönfeld & Co — Multi-billion CZK Portfolio</h4>
+                        <p class="challenge">Senior Investment Manager / Asset Manager (2025). Portfolio financing, asset repositioning, development oversight, and standardization of decision frameworks.</p>
+                        <ul class="results-list">
+                            <li>Structured financing (loans, SPV, equity)</li>
+                            <li>Led bank negotiations and asset repositioning</li>
+                            <li>Brownfield project management incl. Lofty Kolbenova</li>
+                        </ul>
+                    </article>
+
+                    <!-- Case: LuxVet CEE -->
+                    <article class="case-card">
+                        <h4>LuxVet CEE — Veterinary Platform Build-out</h4>
+                        <p class="challenge">Appointed CEO (2022–2023) to establish cross-border veterinary consolidation platform in CZ & SK for Cornerstone Investment Management.</p>
+                        <ul class="results-list">
+                            <li>Built governance and operating model</li>
+                            <li>Acquisition framework for 100+ clinic network</li>
+                            <li>Scalable M&A and integration methodology</li>
+                        </ul>
+                    </article>
+
+                    <!-- Case: ColosseoEAS -->
+                    <article class="case-card">
+                        <h4>ColosseoEAS — Crisis Management & Turnaround</h4>
+                        <p class="challenge">Interim COO (2017–2018). Stabilize operations and rebuild stakeholder confidence following governance and financial control breakdowns.</p>
+                        <ul class="results-list">
+                            <li>Operational turnaround delivered</li>
+                            <li>Governance redesign & ISO-based systems</li>
+                            <li>Restored lender and shareholder confidence</li>
+                        </ul>
+                    </article>
+
+                    <!-- Case: Government of Slovakia -->
+                    <article class="case-card">
+                        <h4>Government of Slovakia — Ukraine Recovery Framework</h4>
+                        <p class="challenge">Advisor to PM Ľudovít Ódor (2023). Design institutional investment framework for Slovakia's participation in Ukraine reconstruction.</p>
+                        <ul class="results-list">
+                            <li>€100M+ public-private investment framework</li>
+                            <li>Coordinated ministries & EU partners</li>
+                            <li>Approved by government October 2023</li>
+                        </ul>
+                    </article>
+
+                    <!-- Case: K CERO Invest -->
+                    <article class="case-card">
+                        <h4>K CERO Invest — €200M+ Portfolio Advisory</h4>
+                        <p class="challenge">Continuous advisory (2020–2025) on feasibility, pricing, exit strategy, and asset-by-asset decisioning across a diverse Slovak portfolio.</p>
+                        <ul class="results-list">
+                            <li>Residential, land, and commercial assets</li>
+                            <li>Exit strategy and pricing optimization</li>
+                            <li>Asset-by-asset divestment execution</li>
+                        </ul>
+                    </article>
+
+                    <!-- Case: Čerešňová Alej -->
+                    <article class="case-card">
+                        <h4>Čerešňová Alej — Project Financing with BKS Bank</h4>
+                        <p class="challenge">21-unit residential development near Trnava (2021–2022). Complete project financing lifecycle management.</p>
+                        <ul class="results-list">
+                            <li>Organized bank tender (BKS Bank selected)</li>
+                            <li>Structured construction loan</li>
+                            <li>Managed drawdown through completion</li>
+                        </ul>
+                    </article>
+
+                    <!-- Case: ensentia -->
+                    <article class="case-card">
+                        <h4>ensentia — IT Company Restructuring & Sale</h4>
+                        <p class="challenge">Interim CEO (2017). Led recovery of 47-person software house through restructuring and sale to new investor.</p>
+                        <ul class="results-list">
+                            <li>Right-sized to 30 while maintaining capabilities</li>
+                            <li>Redesigned product/service portfolio</li>
+                            <li>Completed sale and integration</li>
+                        </ul>
+                    </article>
+                </div>
+
+                <div class="results-cta">
+                    <a href="#contact" class="inline-cta">Discuss your project →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== WHY DBS SECTION ==================== -->
+        <section class="why-dbs">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-label">Why DBS</p>
+                    <h2 class="section-title">The Bridge Advantage</h2>
+                </div>
+
+                <div class="differentiators">
+                    <div class="differentiator">
+                        <div class="differentiator-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
+                            </svg>
+                        </div>
+                        <h3>Public × Private Fluency</h3>
+                        <p>We translate investor priorities into community benefits—and regulatory constraints into bankable plans. Most consultants serve only developers or only municipalities. We operate at the intersection.</p>
+                    </div>
+
+                    <div class="differentiator">
+                        <div class="differentiator-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                        </div>
+                        <h3>Governance First</h3>
+                        <p>Clear decision rights, dashboards, and compliance frameworks reduce friction, minimize politics, and accelerate approvals. Our structured approach creates transparency that builds confidence.</p>
+                    </div>
+
+                    <div class="differentiator">
+                        <div class="differentiator-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                            </svg>
+                        </div>
+                        <h3>Execution Credibility</h3>
+                        <p>Institutional-grade documentation for boards, lenders, and regulators. Delivery governance that stands up to scrutiny. Every engagement produces defensible, audit-ready work products.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== DATA CENTER RESEARCH SECTION ==================== -->
+        <section class="research" id="research">
+            <div class="container">
+                <div class="section-header">
+                    <span class="research-badge">Q1 2026 Research Available</span>
+                    <h2 class="section-title">Data Center Intelligence for <em style="color: var(--forest-green); font-style: italic;">Serious Investors</em></h2>
+                    <p class="section-intro">Institutional-grade research for property developers, infrastructure funds, and lenders. Complete a brief form to access all reports.</p>
+                </div>
+
+                <div class="reports-grid">
+                    <!-- Report 1 -->
+                    <div class="report-card">
+                        <span class="report-badge">Latest Release</span>
+                        <h3 class="report-title">Data Center Industry Research Report</h3>
+                        <p class="report-meta">Q1 2026 | 16 pages | IC-ready</p>
+                        <ul class="report-highlights">
+                            <li>Global capacity & demand analysis</li>
+                            <li>Capital flows & valuation trends</li>
+                            <li>AI/ML infrastructure requirements</li>
+                            <li>Sustainability & ESG considerations</li>
+                        </ul>
+                        <a href="https://tally.so/r/LZ7qW2" target="_blank" rel="noopener" class="report-cta">
+                            <span>Get Report</span>
+                            <span>↓</span>
+                        </a>
+                    </div>
+
+                    <!-- Report 2 -->
+                    <div class="report-card">
+                        <span class="report-badge">Regional Deep-Dive</span>
+                        <h3 class="report-title">CEE Data Centers: The Growth Frontier</h3>
+                        <p class="report-meta">Market Analysis | 45 pages</p>
+                        <ul class="report-highlights">
+                            <li>Poland, Romania, Baltics market deep-dive</li>
+                            <li>Energy grid & pricing analysis by country</li>
+                            <li>Hyperscaler activity tracking</li>
+                            <li>Investment thesis & risk factors</li>
+                        </ul>
+                        <a href="https://tally.so/r/LZ7qW2" target="_blank" rel="noopener" class="report-cta">
+                            <span>Get Report</span>
+                            <span>↓</span>
+                        </a>
+                    </div>
+
+                    <!-- Report 3 -->
+                    <div class="report-card">
+                        <span class="report-badge">Real Estate Focus</span>
+                        <h3 class="report-title">Data Center Real Estate & Land Development in CEE</h3>
+                        <p class="report-meta">Developer Perspective | 48 pages</p>
+                        <ul class="report-highlights">
+                            <li>Land acquisition strategies & pricing</li>
+                            <li>Brownfield conversion opportunities</li>
+                            <li>Zoning & permitting frameworks</li>
+                            <li>FLAP-D overflow dynamics</li>
+                        </ul>
+                        <a href="https://tally.so/r/LZ7qW2" target="_blank" rel="noopener" class="report-cta">
+                            <span>Get Report</span>
+                            <span>↓</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="research-trust">
+                    <div class="research-trust-item">
+                        <svg class="research-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                        <span>UZGP Compliant</span>
+                    </div>
+                    <div class="research-trust-item">
+                        <svg class="research-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <span>Tier 1 Sources</span>
+                    </div>
+                    <div class="research-trust-item">
+                        <svg class="research-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                        <span>IC-Ready Format</span>
+                    </div>
+                    <div class="research-trust-item">
+                        <svg class="research-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <span>Developer/Investor Lens</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== ABOUT SECTION ==================== -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-photo">
+                        <img src="DavidBoruta_edited_FINAL_K4A9852_copy.jpg" alt="Dávid Bořuta - Managing Partner, DBS Development & Consulting" class="about-photo-img">
+                    </div>
+
+                    <div class="about-info">
+                        <h2>Dávid Bořuta</h2>
+                        <p class="about-title">Senior Executive | Real Estate & Healthcare Investments | M&A & Platform Development</p>
+                        <p class="about-intro">Strategic executive with 20+ years leading investments, M&A, and corporate transformation across Central and Eastern Europe. Track record includes €500M+ in transactions, multi-billion CZK portfolio management, and delivering Slovakia's largest residential project (711 units). Proven in building high-performing organisations, driving growth through governance and capital discipline, and steering transformation programmes for corporates, investors, and public institutions.</p>
+
+                        <div class="career-highlights">
+                            <h3>Career Highlights</h3>
+
+                            <div class="career-item">
+                                <span class="career-period">March 2015 – Present</span>
+                                <h4 class="career-role">DBS Development & Consulting – Managing Partner / Founder</h4>
+                                <p class="career-desc">Boutique advisory firm specialising in M&A, corporate restructuring, real estate transactions, and interim management across CEE. Selected mandates include RSBC Group (Senior Investment Manager for multi-billion CZK portfolio), LuxVet CEE (CEO for cross-border veterinary consolidation platform), ColosseoEAS (Interim COO / Crisis Management), and Prangl (Interim Head of Operations). Transactions exceeding €130M including project finance structuring, PPP models, and ESG integration.</p>
+                            </div>
+
+                            <div class="career-item">
+                                <span class="career-period">July – October 2023</span>
+                                <h4 class="career-role">Advisor to Government of Slovakia</h4>
+                                <p class="career-desc">Designed institutional investment framework (€100M+) for Slovakia's participation in Ukraine recovery. Coordinated ministries, financial institutions, and EU partners on funding structures and governance. Framework approved by the Government of Slovak Republic in October 2023.</p>
+                            </div>
+
+                            <div class="career-item">
+                                <span class="career-period">May 2007 – December 2013</span>
+                                <h4 class="career-role">HB Reavis – Country CEO South East Europe</h4>
+                                <p class="career-desc">Country CEO responsible for SEE business. Set up and ran fully operational offices for acquisitions, business development, financial management, and human capital management across Hungary, Croatia, and Serbia. Managed €150M+ development pipeline including Vaci Corner and Agora acquisitions in Budapest.</p>
+                            </div>
+
+                            <div class="career-item">
+                                <span class="career-period">September 2004 – April 2007</span>
+                                <h4 class="career-role">BZ Group – Executive Director / CEO</h4>
+                                <p class="career-desc">CEO with full P&L responsibility for Koloseo Bratislava, Slovakia's largest post-revolution residential development (€80M+). Delivered 95%+ sales, 20% IRR for shareholders, and on-time completion. 711 apartments developed, built, and sold in under 3 years.</p>
+                            </div>
+
+                            <div class="career-item">
+                                <span class="career-period">2000 – 2004</span>
+                                <h4 class="career-role">Banking & Project Finance</h4>
+                                <p class="career-desc">Head of Project Finance Department at Volksbank, Senior Real Estate Banker at Česká spořitelna (Erste Group), and Account Manager / Credit Analyst at Tatra banka.</p>
+                            </div>
+                        </div>
+
+                        <div class="education">
+                            <h3>Education & Certifications</h3>
+                            <p>MSc in Health Services Management – Semmelweis University (2012)</p>
+                            <p>Ing. in Economics, Finance and Banking – University of Economics Bratislava (2001)</p>
+                            <p style="margin-top: 12px; color: var(--forest-green); font-size: 13px;">ITIL • PRINCE2 • Agile SCRUM • Leadership & Team Management (FranklinCovey)</p>
+                        </div>
+
+                        <div class="languages" style="margin-top: 24px;">
+                            <h3>Languages</h3>
+                            <p>Czech, Slovak (C2) • English (C2) • German (C1) • Croatian (C2)</p>
+                        </div>
+
+                        <div class="civic" style="margin-top: 24px;">
+                            <h3>Civic & Policy Leadership</h3>
+                            <p>Founder of <strong>Future Slovakia Forum</strong> (2024) — policy think-tank developing evidence-based reforms in health, education, public finance, and decentralisation for Slovakia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CONTACT SECTION ==================== -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>Let's de-risk your next decision.</h2>
+                        <p>Send 2–3 lines about your project or challenge. I'll reply within one business day.</p>
+
+                        <div class="contact-methods">
+                            <h4>Contact</h4>
+                            <div class="contact-method">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                                <a href="/cdn-cgi/l/email-protection#0f606969666c6a4f6b6d7c6b6c216c6062"><span class="__cf_email__" data-cfemail="2b444d4d42484e6b4f49584f4805484446">[email&#160;protected]</span></a>
+                            </div>
+                            <div class="contact-method">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                </svg>
+                                <a href="tel:+420732390870">+420 732 390 870</a>
+                            </div>
+                            <div class="contact-method">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                                    <circle cx="4" cy="4" r="2"/>
+                                </svg>
+                                <a href="https://www.linkedin.com/in/davidsboruta" target="_blank" rel="noopener">LinkedIn Profile</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-addresses" style="margin-top: 32px;">
+                            <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 16px;">Registered Seat</h4>
+                            <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 24px;">
+                                DBS Development & Consulting s.r.o.<br>
+                                Konviktská 291/24<br>
+                                Staré Město, 110 00 Praha 1<br>
+                                Česká republika
+                            </p>
+
+                            <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 16px;">Offices</h4>
+                            <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px;">
+                                <strong style="color: var(--forest-green);">CZ:</strong> Šumavská 30, Vinohrady, 120 00 Praha 2, Czech Republic
+                            </p>
+                            <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.6;">
+                                <strong style="color: var(--forest-green);">SK:</strong> Miletičova 21, 821 08 Bratislava, Slovakia
+                            </p>
+                        </div>
+
+                        <div class="contact-trust">
+                            <p>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                I respond to all inquiries within 24 hours
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <h3>Tell me about your project</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 24px; line-height: 1.6;">
+                            Share a few details about your situation and I'll respond within 24 hours with initial thoughts on how I can help.
+                        </p>
+                        <a href="https://tally.so/r/xXMLBo" target="_blank" rel="noopener" class="form-submit" style="display: inline-block; text-align: center; text-decoration: none;">
+                            Start a Conversation →
+                        </a>
+                        <p class="form-note">No spam. Your details are used only to respond to your inquiry. We respect your privacy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <img src="vector-logo-DBS-review1.png" alt="DBS Development & Consulting" style="height: 48px; width: auto;">
+                        <span class="logo-text" style="font-family: 'Instrument Serif', serif; font-size: 18px;">DBS Development & Consulting</span>
+                    </div>
+                    <p>Prague, Czech Republic<br>Complex projects delivered across Central & Eastern Europe.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#process">Process</a></li>
+                        <li><a href="#results">Results</a></li>
+                        <li><a href="#research">Research</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="/cdn-cgi/l/email-protection#365950505f55537652544552551855595b"><span class="__cf_email__" data-cfemail="2b444d4d42484e6b4f49584f4805484446">[email&#160;protected]</span></a></li>
+                        <li><a href="tel:+420732390870">+420 732 390 870</a></li>
+                        <li><a href="https://www.linkedin.com/in/davidsboruta" target="_blank" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="https://80496fad-0a78-43cd-b632-94e9cfa5a1f9.usrfiles.com/ugd/80496f_453918c236944cfd9da68d6db45b71da.pdf" target="_blank" rel="noopener">Privacy Policy</a></li>
+                        <li><a href="https://80496fad-0a78-43cd-b632-94e9cfa5a1f9.usrfiles.com/ugd/80496f_8b1628df28bb4866baf5a6c0e6335b28.pdf" target="_blank" rel="noopener">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 DBS Development & Consulting. Prague, Czech Republic. All rights reserved.</p>
+                <div class="footer-compliance">
+                    <span>WCAG 2.1 AA Compliant</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // ==================== STICKY HEADER ==================== 
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // ==================== SMOOTH SCROLL ==================== 
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ==================== INTERSECTION OBSERVER FOR ANIMATIONS ==================== 
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections for fade-in animation
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transf
