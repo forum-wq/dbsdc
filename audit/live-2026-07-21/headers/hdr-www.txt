@@ -1,0 +1,14 @@
+HTTP/2 200 
+server: openresty
+date: Tue, 21 Jul 2026 17:35:27 GMT
+content-type: text/html
+vary: Accept-Encoding
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+last-modified: Mon, 23 Mar 2026 22:25:28 GMT
+etag: "f314-64db8830c5236"
+cache-control: max-age=3600
+expires: Tue, 21 Jul 2026 18:35:27 GMT
+alt-svc: h3=":443"; ma=86400
+

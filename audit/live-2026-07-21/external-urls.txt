@@ -1,0 +1,33 @@
+DBS PRODUCTION — EXTERNAL URL / DEPENDENCY INVENTORY
+Captured 2026-07-21 from live production (byte-identical to persona 3759141).
+
+== Tally forms (PRODUCTION — do not modify) ==
+https://tally.so/r/LZ7qW2
+https://tally.so/r/xXMLBo
+
+== usrfiles.com PDFs (Wix-hosted; migration candidates, NOT migrated here) ==
+https://80496fad-0a78-43cd-b632-94e9cfa5a1f9.usrfiles.com/ugd/80496f_453918c236944cfd9da68d6db45b71da.pdf
+https://80496fad-0a78-43cd-b632-94e9cfa5a1f9.usrfiles.com/ugd/80496f_8b1628df28bb4866baf5a6c0e6335b28.pdf
+https://80496fad-0a78-43cd-b632-94e9cfa5a1f9.usrfiles.com/ugd/80496f_a78f6432d9314524b93d8a2c944b93ea.pdf
+https://80496fad-0a78-43cd-b632-94e9cfa5a1f9.usrfiles.com/ugd/80496f_b8df826ca90845b6b01d7acf91cdb4ae.pdf
+https://80496fad-0a78-43cd-b632-94e9cfa5a1f9.usrfiles.com/ugd/80496f_bdb19809ed8142c880d4f519c0fbfe70.pdf
+
+== LinkedIn / social ==
+https://www.linkedin.com/company/dbs-development
+https://www.linkedin.com/in/davidsboruta
+
+== Google Fonts ==
+https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap
+https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap
+
+== tel: ==
+tel:+420732390870
+tel:+421903861425
+
+== dbsdc.com self-references (host consistency) ==
+   2 https://dbsdc.com
+   3 https://dbsdc.com/og-image.png
+   1 https://dbsdc.com/vector-logo-DBS-review1.png
+   1 https://www.dbsdc.com/</loc>
+   1 https://www.dbsdc.com/sitemap.xml
+   1 https://www.dbsdc.com/thank-you.html</loc>
