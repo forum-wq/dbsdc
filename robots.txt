@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /cdn-cgi/
 
-Sitemap: https://www.dbsdc.com/sitemap.xml
+Sitemap: https://dbsdc.com/sitemap.xml

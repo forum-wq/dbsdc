@@ -281,6 +281,10 @@
             border-bottom: 1px solid var(--border);
         }
 
+        .trust-group + .trust-group {
+            margin-top: 48px;
+        }
+
         .trust-label {
             text-align: center;
             font-size: 12px;
