@@ -161,3 +161,74 @@ Unique, verified:
 Note the branch name is `…-9dlZa` (lowercase L), not `…-9dIZa`.
 
 See the Gate 0 report for the full assessment of the persona branch and its overlap with Phase 1.
+
+---
+
+## 7. Gate 0 Reconciliation Addendum (2026-07-21)
+
+This addendum records the production-truth reconciliation performed at Gate 0.
+It supersedes any earlier assumption in this document that `main` represents
+production.
+
+### 7.1 `main` is NOT production truth
+
+The old `main` (`25537dd`, 2026-03-23, "Add files via upload") is a 2,299-line
+single-file build with **inline CSS**. **Live `dbsdc.com` does not serve this.**
+Live production serves the persona-refactor build (external `styles.css`,
+1,100-line `index.html`, Katarína Činčurová, `office@dbsdc.com`, plural voice,
+`og-image.png` + social meta, `robots.txt`, `sitemap.xml`).
+
+### 7.2 Production == persona branch (verified byte-identical)
+
+A forensic public snapshot of live `dbsdc.com` (both hosts) was captured on
+2026-07-21 and compared to `origin/claude/add-contact-persona-9dlZa @ 3759141`.
+**Every served file is byte-for-byte identical (12/12, SHA-256):** `index.html`,
+`styles.css`, `thank-you.html`, `robots.txt`, `sitemap.xml`, `og-image.png`, all
+favicons, founder photo, logo. Server is `openresty`; homepage `last-modified`
+is 2026-03-23 (matches the persona commit date).
+
+**Consequence:** there is **no live-only authored content**. The previously
+suspected "production-ahead" items — `ensentia`, `RSBC`, `Schönfeld`, and the
+`2004` range — are all present in the persona branch already (and in `main`).
+`Tatra banka`, `Česká spořitelna`, `Procter & Gamble` are absent from live
+(they are the three NEW approved trust-bar names). **No source reconstruction
+was required.**
+
+### 7.3 Backup / rollback status
+
+| Tag | Points to | Meaning |
+|---|---|---|
+| `backup/pre-release-1-2026-07-20` | old `main` `25537dd` | **Historical stale-main checkpoint.** NOT a valid production rollback point (not what production serves). Preserved; not moved/deleted. |
+| `backup/live-public-2026-07-21` | audit snapshot commit | **Forensic public snapshot** of served bytes. Emergency recovery evidence. |
+| `origin/claude/add-contact-persona-9dlZa @ 3759141` | authored source | **Actual rollback candidate** — verified byte-identical to production, with full git history. |
+
+- **Authored/origin deployment package:** NOT recovered (no FTP/CI/hosting
+  artifact available locally). Stated explicitly, not assumed. The persona
+  branch is the verified authored equivalent and serves this role.
+
+### 7.4 CDN / edge
+
+Production carries one baked-in Cloudflare artifact in the static HTML — a
+`/cdn-cgi/.../email-decode.min.js` `<script>`. Emails are already clean
+`mailto:` links, so this script is removed from authored source in the Phase 1
+layer. No other edge transformations were found in the served HTML (openresty
+serves the static file verbatim).
+
+### 7.5 Host / redirect (infrastructure)
+
+Both `https://dbsdc.com/` and `https://www.dbsdc.com/` return `200` with
+**identical bodies and NO redirect**. The approved canonical host is
+**non-www** (`https://dbsdc.com/`); repo metadata is set accordingly. The
+required `www → 301 → dbsdc.com` redirect is **missing** and is a **manual
+hosting/Cloudflare action for Dávid** (out of scope of this repo work).
+
+### 7.6 Branch topology produced at Gate 0
+
+| Branch | Role |
+|---|---|
+| `audit/live-snapshot-2026-07-21` | forensic snapshot + evidence (tag `backup/live-public-2026-07-21`) |
+| `reconciliation/live-source-2026-07-21` | `origin/main` + merged persona `3759141`; tree == production. No reconstruction commits needed. |
+| `release-1/phase-1-quick-fixes` | reconciliation + this inventory + Phase 1 quick fixes → **PR head** |
+
+Gate 0 remains **CLOSED** pending human review.
+
