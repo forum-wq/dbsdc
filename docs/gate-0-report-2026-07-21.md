@@ -203,3 +203,41 @@ Gate 0 remains **CLOSED**: no merge, no deploy, no Tally/Cloudflare/DNS changes
 until Dávid reviews.
 
 **No live deployment was performed.**
+
+---
+
+## 15. Final pre-deployment corrections (2026-07-22, human-authorized)
+
+Applied on `release-1/phase-1-quick-fixes` after human authorization:
+
+- **Sitemap/noindex consistency:** removed `thank-you.html` (it is
+  `noindex,nofollow`) from `sitemap.xml`; sitemap now lists the homepage only
+  (`lastmod 2026-07-22`).
+- **Home-link + smooth-scroll:** header logo `href="#"` → `href="/"` (index);
+  thank-you logo + "Back to main site" → `href="/"`. Smooth-scroll handler made
+  defensive — returns early on empty/`"#"` href and only scrolls when a real
+  target exists (never calls `querySelector('#')`). Verified: bogus `#` click
+  throws no console error.
+- **Removed unverified `WCAG 2.1 AA Compliant`** footer claim and the now-empty
+  `footer-compliance` wrapper. No replacement compliance claim.
+- **Qualified every `€500M+`** as founder/career track record (meta,
+  OG, Twitter, hero, Track Record intro, About = "Dávid's career track
+  record…", team card = "€500M+ career transaction track record"). DBS metric
+  kept separate: `€130M+ in DBS mandates since 2015`.
+- **Trust bar unchanged** (12 names, two groups, names only).
+- **Canonical host** stays non-www throughout.
+- **Accepted Release 1 technical debt:** External PDF migration remains open for
+  a later controlled migration (report PDFs, Privacy Policy, Terms remain on
+  usrfiles.com; links intact).
+
+**Auto-deploy determination:** merging `main` does **NOT** deploy production —
+no GitHub Actions (0 workflows), no webhooks (`[]`), no deployments/environments
+(0), no GitHub Pages (`has_pages=false`), `allow_auto_merge=false`; production
+is served by openresty via manual upload.
+
+**Final QA (local HTTP server + Chrome 150 CDP):** all 12 public assets HTTP
+200; desktop & mobile horizontal overflow = 0; console errors = NONE; one H1
+per page; no duplicate IDs; no broken fragment anchors; JSON-LD parses; sitemap
+valid XML; robots sitemap non-www; og-image = 1200×630 (matches declared); 12
+trust names present once each in correct groups. Screenshots:
+`docs/qa/homepage-desktop-final-1280.png`, `docs/qa/homepage-mobile-final-390.png`.
