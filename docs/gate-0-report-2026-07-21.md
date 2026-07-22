@@ -161,10 +161,11 @@ performed** (needs verified source PDFs + human review; no Tally change).
 ## 10. Evidence-register status (new trust-bar names)
 
 `docs/evidence/trust-bar-evidence-register.md`. **Tatra banka**,
-**Česká spořitelna**, **Procter & Gamble** are approved for branch/preview but
-are NEW public claims — each marked **`Evidence required before deploy`**
-(role/title, period, evidence source, approved wording, permission). **Must be
-completed before any live deployment.** Status is internal, never shown on page.
+**Česká spořitelna**, **Procter & Gamble** — register rows **COMPLETED and
+approved by David Bořuta on 21.7.2026** (role/title, period, evidence source =
+employment contract + paychecks, approved public wording = name only,
+public-use permission granted). **Deploy gate for these names is CLEARED.**
+Status is internal, never shown on page; the page shows name only.
 
 ## 11. Final trust-bar grouping
 
@@ -188,8 +189,8 @@ reclassified.)
 
 - **Blocker (infra, not repo):** `www → 301 → non-www` redirect missing —
   manual Cloudflare/hosting action.
-- **Deploy gate:** 3 new founder names need evidence-register completion before
-  going live.
+- **Deploy gate:** ~~3 new founder names need evidence-register completion~~
+  **CLEARED** — all three approved by David Bořuta on 21.7.2026 (see §10).
 - No authored origin deployment package exists; persona branch is the trusted
   authored equivalent.
 - `usrfiles.com` PDFs remain Wix-hosted (future migration).

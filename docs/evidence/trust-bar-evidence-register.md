@@ -1,10 +1,11 @@
 # Trust-Bar Evidence Register — Release 1 Phase 1
 
 **Purpose:** Internal provenance record for the trust-bar organisations. The
-three **newly added** founder names are approved for the branch/preview but are
-**new public claims**. Each must have its register row completed and cleared
-**before any live deployment**. This register is internal — its status column
-is NEVER displayed on the public page.
+three **newly added** founder names were new public claims; their register rows
+are now **completed and approved** (see below). This register is internal — its
+role/period/status columns are NEVER displayed on the public page. Per Decision 2,
+the trust bar shows **organisation names only** (no roles, periods, or details);
+the approved public wording is therefore the organisation name as displayed.
 
 **Approved grouping (Decision 2, final):** exactly 12 organisations, two groups,
 9 originals kept + 3 added. No removals, no reclassification, no other additions.
@@ -13,12 +14,12 @@ is NEVER displayed on the public page.
 
 | # | Organisation | Role / title | Period | Evidence source | Approved public wording | Status |
 |---|---|---|---|---|---|---|
-| 1 | HB Reavis | *(on file)* | *(on file)* | Existing site / career record | Name only | Pre-existing (live) |
-| 2 | BZ Group | *(on file)* | *(on file)* | Existing site / career record | Name only | Pre-existing (live) |
-| 3 | Government of Slovakia | *(on file)* | *(on file)* | Existing site (Ukraine Recovery Framework case) | Name only | Pre-existing (live) |
-| 4 | **Tatra banka** | `Evidence required before deploy` | `Evidence required before deploy` | `Evidence required before deploy` | Name only | **NEW — evidence required before deploy** |
-| 5 | **Česká spořitelna** | `Evidence required before deploy` | `Evidence required before deploy` | `Evidence required before deploy` | Name only | **NEW — evidence required before deploy** |
-| 6 | **Procter & Gamble** | `Evidence required before deploy` | `Evidence required before deploy` | `Evidence required before deploy` | Name only | **NEW — evidence required before deploy** |
+| 1 | HB Reavis | *(on file — Country CEO)* | *(on file)* | Existing site / career record | `HB Reavis` | Pre-existing (live) |
+| 2 | BZ Group | *(on file — CEO)* | *(on file)* | Existing site / career record | `BZ Group` | Pre-existing (live) |
+| 3 | Government of Slovakia | *(on file)* | *(on file)* | Existing site (Ukraine Recovery Framework) | `Government of Slovakia` | Pre-existing (live) |
+| 4 | **Tatra banka** (Raiffeisen), Bratislava | Account manager — project finance & syndications | 04/2000 – 03/2002 | Employment contract, paychecks | `Tatra banka` | **CLEARED — approved by David Bořuta, 21.7.2026** |
+| 5 | **Česká spořitelna** (Erste Bank), Prague | Senior banker — real estate finance | 04/2002 – 10/2023 | Employment contract, paychecks | `Česká spořitelna` | **CLEARED — approved by David Bořuta, 21.7.2026** |
+| 6 | **Procter & Gamble**, Bratislava | Systems manager — Supply chain | 01/1998 – 07/1999 | Employment contract, paychecks | `Procter & Gamble` | **CLEARED — approved by David Bořuta, 21.7.2026** |
 
 ## Group B — "Selected DBS-era mandates"
 
@@ -31,12 +32,22 @@ is NEVER displayed on the public page.
 | 5 | Cornerstone IM | Existing site (veterinary platform case) | Pre-existing (live) |
 | 6 | Braun Holding | Existing site | Pre-existing (live) |
 
-## Deploy gate
+## Deploy gate — CLEARED
 
-**The three NEW founder names (Tatra banka, Česká spořitelna, Procter & Gamble)
-must not be published to production until the `Evidence required before deploy`
-fields above are completed and approved by Dávid.** Fields to complete for each:
-role/title, period, evidence source, approved public wording, publication/
-permission status. Do not invent missing data.
+All three new founder names (Tatra banka, Česká spořitelna, Procter & Gamble)
+have completed, approved register rows: role/title, period, evidence source
+(employment contract + paychecks), approved public wording (name only), and
+public-use permission — **approved by David Bořuta on 21.7.2026.** The deploy
+gate for these names is **lifted**.
+
+**Public display note:** the page shows the organisation name only, in the
+existing trust-bar visual language. Parent-group affiliations (Raiffeisen for
+Tatra banka; Erste Bank for Česká spořitelna) and roles/periods are recorded
+here for provenance but are intentionally NOT shown on the page.
+
+**Data-quality note (non-blocking, for Dávid):** the Česká spořitelna period
+(04/2002 – 10/2023, ~21 years) overlaps the later HB Reavis Country-CEO and
+BZ Group CEO roles and the 2015 DBS founding. Recorded exactly as supplied; not
+shown publicly. Worth a sanity check if it ever feeds a dated public claim.
 
 No other new public claims are approved in this Phase 1 work.
