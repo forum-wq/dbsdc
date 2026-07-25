@@ -18,7 +18,7 @@ the approved public wording is therefore the organisation name as displayed.
 | 2 | BZ Group | *(on file — CEO)* | *(on file)* | Existing site / career record | `BZ Group` | Pre-existing (live) |
 | 3 | Government of Slovakia | *(on file)* | *(on file)* | Existing site (Ukraine Recovery Framework) | `Government of Slovakia` | Pre-existing (live) |
 | 4 | **Tatra banka** (Raiffeisen), Bratislava | Account manager — project finance & syndications | 04/2000 – 03/2002 | Employment contract, paychecks | `Tatra banka` | **CLEARED — approved by David Bořuta, 21.7.2026** |
-| 5 | **Česká spořitelna** (Erste Bank), Prague | Senior banker — real estate finance | 04/2002 – 10/2023 | Employment contract, paychecks | `Česká spořitelna` | **CLEARED — approved by David Bořuta, 21.7.2026** |
+| 5 | **Česká spořitelna** (Erste Bank), Prague | Senior banker — real estate finance | 04/2002 – 10/2003 | Employment contract, paychecks | `Česká spořitelna` | **CLEARED — approved by David Bořuta, 21.7.2026** |
 | 6 | **Procter & Gamble**, Bratislava | Systems manager — Supply chain | 01/1998 – 07/1999 | Employment contract, paychecks | `Procter & Gamble` | **CLEARED — approved by David Bořuta, 21.7.2026** |
 
 ## Group B — "Selected DBS-era mandates"
@@ -44,10 +44,5 @@ gate for these names is **lifted**.
 existing trust-bar visual language. Parent-group affiliations (Raiffeisen for
 Tatra banka; Erste Bank for Česká spořitelna) and roles/periods are recorded
 here for provenance but are intentionally NOT shown on the page.
-
-**Data-quality note (non-blocking, for Dávid):** the Česká spořitelna period
-(04/2002 – 10/2023, ~21 years) overlaps the later HB Reavis Country-CEO and
-BZ Group CEO roles and the 2015 DBS founding. Recorded exactly as supplied; not
-shown publicly. Worth a sanity check if it ever feeds a dated public claim.
 
 No other new public claims are approved in this Phase 1 work.
